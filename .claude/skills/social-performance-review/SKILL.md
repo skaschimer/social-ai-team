@@ -345,4 +345,3 @@ Record the score in `context/review-history.md`. Use it to track improvement ove
 - `/content-calendar` — Acts on the recommendations from this review to build next month's plan
 - `/caption-writer` — Updated `best-performers.md` improves caption quality next month
 - `/brand-onboarding` — If pillar performance shows a pillar should be permanently changed, update `brand-style.md`
-- `/social-content` — General social strategy reference if fundamental questions arise

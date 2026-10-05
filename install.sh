@@ -7,6 +7,9 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 echo "Installing Social AI Team skills..."
 
 SKILLS=(
+  "idea-intake"
+  "devto-writer"
+  "weekly-content-run"
   "social-media-manager"
   "brand-onboarding"
   "content-calendar"
@@ -20,7 +23,7 @@ SKILLS=(
 )
 
 for skill in "${SKILLS[@]}"; do
-  src="$SCRIPT_DIR/skills/$skill"
+  src="$SCRIPT_DIR/.claude/skills/$skill"
   dst="$SKILLS_DIR/$skill"
   mkdir -p "$dst"
   cp -r "$src/." "$dst/"
@@ -28,5 +31,5 @@ for skill in "${SKILLS[@]}"; do
 done
 
 echo ""
-echo "Done. All 10 skills installed to $SKILLS_DIR"
+echo "Done. All 13 skills installed to $SKILLS_DIR"
 echo "Open Claude Code and run /social-media-manager to get started."

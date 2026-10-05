@@ -4,6 +4,8 @@ A set of Claude Code skills that work together as a complete social media team f
 
 Built to run inside [Claude Code](https://claude.ai/code).
 
+> **Cloud workspace mode:** skills live in `.claude/skills/`, so they load automatically in Claude Code cloud sessions with no install step. Workspace settings (Notion databases, platforms, cadence, brand voice) live in [`CLAUDE.md`](CLAUDE.md). In this mode ideas and the posting calendar live in Notion — `/idea-intake` → `/content-calendar` → platform writers (incl. `/devto-writer`), or `/weekly-content-run` for the unattended weekly routine. Nothing is ever posted automatically.
+
 > **Just getting started?** Read [SETUP.md](SETUP.md) — a full beginner walkthrough covering Claude Code, install, MCP setup, and your first client.
 
 ---
@@ -158,7 +160,7 @@ bash install.sh
 
 **Windows:** double-click `install.bat` (or run it from the command line).
 
-This copies all 10 skills into `~/.claude/skills/` where Claude Code can find them.
+This copies all 13 skills into `~/.claude/skills/` where Claude Code can find them.
 
 ---
 
@@ -242,9 +244,9 @@ Three reference documents are bundled with the relevant skills:
 
 | File | Used by | Contents |
 |---|---|---|
-| `content-calendar/references/content-mix-guide.md` | `/content-calendar` | Recommended pillar ratios by business type |
-| `caption-writer/references/hook-library.md` | `/caption-writer` | 40+ hook formulas by type |
-| `social-performance-review/references/benchmarks.md` | `/social-performance-review` | Engagement benchmarks by platform and account size |
+| `.claude/skills/content-calendar/references/content-mix-guide.md` | `/content-calendar` | Recommended pillar ratios by business type |
+| `.claude/skills/caption-writer/references/hook-library.md` | `/caption-writer` | 40+ hook formulas by type |
+| `.claude/skills/social-performance-review/references/benchmarks.md` | `/social-performance-review` | Engagement benchmarks by platform and account size |
 
 ---
 

@@ -1,7 +1,7 @@
 ---
 name: content-calendar
-version: 1.0.0
-description: Builds a month of social media post ideas for SMBs. Takes brand context, platforms, and goals and produces a structured content calendar with post topics, formats, angles, and visual direction for each slot. Output saves to context/content-calendar.md for use by /caption-writer and /social-creative-designer. Supports Instagram, LinkedIn, Facebook, TikTok, and X.
+version: 1.1.0
+description: Builds a month of social media post ideas for SMBs. Takes brand context, platforms, and goals and produces a structured content calendar with post topics, formats, angles, and visual direction for each slot. Output saves to context/content-calendar.md, or — in Notion mode (see CLAUDE.md) — as dated rows in the Posting Calendar database, sourcing topics from the Content Ideas database. Supports Instagram, LinkedIn, Facebook, Threads, TikTok, X, and DEV Community.
 ---
 
 # Content Calendar
@@ -43,6 +43,22 @@ All phases work without MCPs. Competitor and trend research phases are skipped �
 
 ---
 
+## Notion Mode (cloud workspace)
+
+If the repo's `CLAUDE.md` defines Notion databases and the Notion connector is available, this mode **replaces** Phases 0, 4 and 5's file output:
+
+1. **Context** — read `CLAUDE.md` (brand & voice, pillars, platforms, cadence, editorial rhythm) instead of `context/brand-style.md`. Skip `/brand-onboarding`.
+2. **Topics** — query Content Ideas for `Status` in (`Ready`, `Scheduled`) ordered by Priority. Every slot must link to an idea; do not invent topics. If ideas run short, leave slots empty and report the gap (suggest `/idea-intake`).
+3. **Dates, not weeks** — plan a rolling window (default: the next 14 days, or the month the operator names). Each slot gets an exact `Publish Date` using the cadence's default days.
+4. **One row per post** — create Posting Calendar rows: `Post` (working title), `Publish Date`, `Platform`, `Format`, `Pillar`, `Hook` (the angle), `Visual Direction`, `Idea` relation, Status `Planned`. Put the full POST block from Phase 4 in the row's page body.
+5. **No duplicates** — query existing rows in the window first; fill only missing slots. Never modify rows with Status `Approved` or `Posted`.
+6. **Idea status** — set each newly scheduled idea to `Scheduled`.
+7. **Review** — Phase 6 adjustments are applied by updating rows, not regenerating a file.
+
+Phases 1–3 (brief intake, research, content mix) still apply; pre-fill their answers from `CLAUDE.md` and only ask about what's missing.
+
+---
+
 ## Phase 0 — Setup
 
 Read the following files if they exist:
@@ -50,7 +66,7 @@ Read the following files if they exist:
 - `context/best-performers.md` — past high-performing post types
 - `context/upcoming-events.md` — known campaigns or seasonal moments
 - `.claude/product-marketing-context.md` — product, audience, positioning, revenue goals
-- `context/social-strategy.md` — platform strategy and pillar ratios (output from `/social-strategy` if it has been run)
+- `context/social-strategy.md` — platform strategy and pillar ratios, if the operator has written one
 
 Log what is available and what is missing. If `brand-style.md` does not exist, run `/brand-onboarding` first — the content calendar cannot be built without knowing the brand's content pillars and platform presence.
 
@@ -244,7 +260,7 @@ Regenerate the output file after any changes are accepted.
 - **Vague topics produce weak captions** — "educational post" is not a brief. Push to a specific angle: "3 mistakes people make when booking a hair appointment for the first time." The more specific the topic, the better the caption-writer output.
 - **Carousels are the highest-save format** on Instagram — weight them toward educational and tips pillars. Saves signal the algorithm more than likes.
 - **Don't over-index on promotional content** — SMBs tend to want more promotional posts than their audience will tolerate. A good rule: max 20% promotional. More trust-building content leads to more conversions.
-- **If `/social-strategy` has not been run** — this skill handles the pillar and platform decisions itself. When `/social-strategy` is built, it will output `context/social-strategy.md` which this skill reads to skip those questions.
+- **Pillar and platform decisions** — this skill makes them itself unless `context/social-strategy.md` (file mode) or `CLAUDE.md` (Notion mode) already defines them.
 - **If best-performers data is not available** — build the first calendar from best-practice defaults, then adjust the second month based on what actually performed.
 
 ---
@@ -254,5 +270,6 @@ Regenerate the output file after any changes are accepted.
 - `/brand-onboarding` — Run first to create brand-style.md including content pillars
 - `/caption-writer` — Reads context/content-calendar.md and writes captions for each post
 - `/social-creative-designer` — Creates visual assets using the Visual Direction field from each post
-- `/social-content` — General social media strategy and platform advice
-- `/social-strategy` — (Planned) Platform strategy and pillar definition — will feed into this skill when built
+- `/idea-intake` — Fills the Content Ideas database this skill draws topics from (Notion mode)
+- `/linkedin-writer`, `/threads-writer`, `/devto-writer` — Platform-native drafts for scheduled slots
+- `/weekly-content-run` — Runs intake → calendar → drafts on a weekly schedule

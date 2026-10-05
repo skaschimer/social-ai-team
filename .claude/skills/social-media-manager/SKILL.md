@@ -38,6 +38,17 @@ LAYER 3 — DISTRIBUTION & REVIEW
 
 ---
 
+## Notion Mode (cloud workspace)
+
+If the repo's `CLAUDE.md` defines Notion databases and the Notion connector is available, the workflow state lives in Notion, not `context/`:
+
+- Phase 0 status = counts from Content Ideas (Ready / Parked) and Posting Calendar for the next 14 days (Planned / Needs review / Approved / Posted) plus overdue rows.
+- New-client setup (Route A) is skipped — `CLAUDE.md` is the brand file.
+- Route B becomes: `/idea-intake` → `/content-calendar` (Notion mode) → platform writers (`/linkedin-writer`, `/threads-writer`, `/caption-writer` for Facebook, `/devto-writer`).
+- For the unattended weekly version, use `/weekly-content-run`.
+
+---
+
 ## Phase 0 — Context Check
 
 Before doing anything else, read every available context file and build a clear picture of where this client stands.

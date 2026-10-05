@@ -43,6 +43,12 @@ All phases work without MCPs. Trend research and competitor analysis are skipped
 
 ---
 
+## Notion Mode (cloud workspace)
+
+If the repo's `CLAUDE.md` defines a Posting Calendar and the Notion connector is available: take the brief from the calendar row(s) for this platform (and the related Content Ideas row), use `CLAUDE.md` → "Brand & Voice" instead of `context/brand-style.md`, and save each finished draft into its calendar row's **page body** (fill `Hook`, `CTA`, `Char Count`, `Visual Direction`; set Status `Needs review`) instead of writing to `outputs/`. Never edit rows with Status `Approved` or `Posted`. In this workspace, this skill writes the **Facebook** slots.
+
+---
+
 ## Phase 0 — Setup
 
 Read the following files if they exist:
@@ -255,4 +261,3 @@ Present the captions and summary table. Offer:
 - `/brand-onboarding` — Run first to create brand-style.md if it doesn't exist
 - `/content-calendar` — Produces the post topics this skill writes captions for
 - `/social-creative-designer` — Turns captions into visual assets (uses the Visual Direction field)
-- `/social-content` — General social media strategy and platform advice

@@ -80,7 +80,7 @@ This copies the skills into the right place so Claude Code can find them.
 2. Double-click `install.bat`
 3. A command window will open, install the skills, and close. Done.
 
-**What this does:** Copies all 10 skill folders into `~/.claude/skills/` — the location Claude Code checks for available skills.
+**What this does:** Copies all 13 skill folders into `~/.claude/skills/` — the location Claude Code checks for available skills.
 
 ---
 

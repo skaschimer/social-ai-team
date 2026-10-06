@@ -42,7 +42,7 @@ For each candidate:
 | **Thesis** | 1–2 sentences: the core argument, not a summary of the announcement. |
 | **Priority** | Use the stated priority (P0/P1/P2). "Cornerstone backlog" / "Backlog" → `Backlog`. None stated → `P2`. |
 | **Pillar** | One of the pillars in `CLAUDE.md`. Hands-on .NET for build/measure pieces; Architecture for review/design pieces; Agent engineering for agent runtime/evals/economics; Platform / Azure for cloud platform pieces; Field note for short pointers; Cornerstone for synthesis pieces. |
-| **Status** | `Ready` if it meets the Definition of Ready in `CLAUDE.md` (thesis + primary source or concrete experiment). `Parked` if the source says hold/fold into another piece. Otherwise `New`. |
+| **Status** | Always `New` (or `Parked` if the source says hold/fold into another piece). **Never set `Ready`** — promoting an idea to Ready is the operator's decision. In the report, list new ideas that look ready (thesis + primary source or concrete experiment) as suggestions. |
 | **Target Platforms** | Long-form/hands-on → DEV Community + LinkedIn. Opinion/thesis → LinkedIn + Threads. Short pointer → Threads (+ Facebook if it works for a non-specialist audience). |
 | **Source / Source Section** | Source page URL and the heading/number it came from. |
 | **References** | URLs only, `;`-separated. |
@@ -51,7 +51,7 @@ For each candidate:
 
 A candidate is a duplicate if an existing row has the same Source + Source Section, **or** a near-identical title (same headline ignoring punctuation/case, or the candidate's headline equals an existing Alt Headline).
 
-- Duplicate, and the source changed priority/thesis/status → propose an **update** (never downgrade a row the operator has moved to `Scheduled`, `Drafting` or `Published`).
+- Duplicate, and the source changed priority/thesis/references → propose an **update** to those fields only. Never change an existing row's Status.
 - Duplicate, unchanged → skip.
 - New → propose a **create**.
 
@@ -75,6 +75,7 @@ Idea intake complete.
 Sources read: [n pages]
 Created: [n]  Updated: [n]  Skipped (duplicates): [n]
 Ready ideas available for scheduling: [n] (P0: n, P1: n, P2: n)
+New ideas that look ready (your call): [list titles, or "none"]
 Next: /content-calendar to fill the next two weeks.
 ```
 

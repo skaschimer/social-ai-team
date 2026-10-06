@@ -28,7 +28,7 @@ Run `/idea-intake` in unattended mode (write creates and non-destructive updates
    - DEV Community slot in a week → schedule that idea's LinkedIn + Threads companions the same week.
    - Facebook gets the most accessible idea of the week, not the most technical.
 4. Create rows with Status `Planned`, Pillar, Format, Hook (angle), and the `Idea` relation. Set newly used ideas to `Scheduled`.
-5. If there are not enough Ready ideas, leave slots empty and say so in the report (never invent filler topics).
+5. If there are not enough Ready ideas, leave slots empty and say so in the report (never invent filler topics, and never promote `New` ideas to `Ready` yourself — list candidates for the operator instead).
 
 ## Step 3 — Draft next week
 
@@ -53,6 +53,7 @@ Drafted for review: [n]
 Needs your attention:
   - [n] drafts in "Needs review"
   - [n] rows past their date still not marked Posted/Skipped
+  - New ideas that look ready — mark them Ready in Content Ideas if you want them scheduled: [titles]
   - [any NEEDS SOURCE / RESULT markers, low Ready-idea backlog, schema drift]
 ```
 

@@ -63,7 +63,8 @@ Cadence is a starting point — adjust here, not in the skills. Plan **2 weeks a
 ## Editorial rules (from the Developer Content Queue)
 
 - Rhythm: **hands-on .NET → architecture → agent engineering → hands-on .NET → platform architecture → cornerstone synthesis**.
-- Pick ideas by Priority (P0 > P1 > P2 > Backlog), skip `Parked`, respect "hold until…" notes in the Thesis.
+- Only ideas the operator has marked `Ready` are scheduled. Skills never set `Ready`; new ideas arrive as `New`.
+- Pick Ready ideas by Priority (P0 > P1 > P2 > Backlog), skip `Parked`, respect "hold until…" notes in the Thesis.
 - One idea feeds several slots: a DEV Community article in week N spawns its LinkedIn + Threads companion posts in the same week.
 - An article is ready only if it has a thesis beyond an announcement, at least one primary source, a concrete developer/architect problem, and an artifact (code, diagram, benchmark, experiment).
 - Headlines promise the insight, not the product announcement. Don't turn release notes into posts.
